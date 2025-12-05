@@ -3,10 +3,10 @@
 이 디렉터리는 포켓몬 스카렛/바이올렛 배틀 스타디움 싱글(3v3, Regulation I)을 위한 강화학습 파이프라인입니다. poke-env로 쇼다운 서버와 통신하고, sb3-contrib의 MaskablePPO로 불법 액션을 마스킹하며 학습합니다.
 
 ## 들어가기 앞서
-해당 깃허브를 반드시 미리 clone해서 다음과 같이 둬야 합니다.
-```git clone https://github.com/hsahovic/poke-env.git```
-```git clone https://github.com/smogon/pokemon-showdown.git```
-```node pokemon-showdown start --no-security``` 를 통하여 버에 접속을 해야 학습이 가능합니다.
+  ```bash
+  ```node pokemon-showdown start --no-security```
+  ```
+ 를 통하여 서버에 접속을 해야 학습이 가능합니다.
 
 
 ## 핵심 개념
