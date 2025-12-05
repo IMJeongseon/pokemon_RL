@@ -6,7 +6,7 @@
 - **상태(164차원)**: `reg_i_player.py`의 `embed_battle`가 생성. 액티브/벤치 HP·상태·랭크, 기술 위력/상성/명중/PP, 테라 가능 여부, 함정/필드/날씨, 팀 생존 수, 턴 정보 등을 포함합니다. 상세는 `state_vector.md` 참조.
 - **행동(10 이산)**: 4개 기술, 4개 테라+기술, 2개 교체. `get_action_mask`로 불법 액션(강제 교체, 중복 함정/상태기, 테라 불가 등)을 0으로 마스킹합니다. 상세는 `action.md` 참조.
 - **보상**: `rewards.py`의 `RegIRewardEngine`을 사용해 승패/HP/KO, 랭크 변화, 상태/하품, 함정, 무효 상성 패널티, 턴 비용 등을 포함한 shaping을 수행합니다. 상세는 `reward.md` 참조.
-- **정책**: `train2.py`에서 MaskablePPO(2층 MLP 256-256)를 사용. 텐서보드 로그와 체크포인트는 `outputs/`에 저장됩니다. 개요는 `policy.md` 참조.
+- **정책**: `train2.py`에서 MaskablePPO(2층 MLP 256-256)를 사용. 텐서보드 로그와 체크포인트는 `outputs/`에 저장됩니다.
 
 ## 팀 구성
 `reg_i_team_builder.py`에서 정의한 고정 파티(6마리). 기본 팀프리뷰는 `/team 123456`으로 1~3번 슬롯을 출전시킵니다. 필요하면 `RegIPlayer.set_team_order("/team ...")`로 한 번에 한해 커스텀 순서를 지정할 수 있습니다.
@@ -65,3 +65,17 @@ reg_i_rl/
 ├── evaluate_model.py         # 랜덤 상대 평가
 └── watch_battles.py          # 배틀 디버그
 ```
+
+## References
+
+본 프로젝트는 다음 오픈소스 프로젝트의 코드를 기반으로 합니다:
+
+- **poke-env**  
+  GitHub: https://github.com/hsahovic/poke-env  
+  License: MIT License
+
+- **pokemon-showdown**  
+  GitHub: https://github.com/smogon/pokemon-showdown  
+  License: MIT License
+
+원본 프로젝트의 라이선스 요구사항을 준수하며 사용되었습니다.
